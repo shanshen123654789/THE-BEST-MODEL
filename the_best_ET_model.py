@@ -78,13 +78,6 @@ if st.button("Predict"):
     probability = predicted_proba[predicted_class] * 100
 
     text = f"Based on feature values, predicted possibility of high growth rate is {probability:.2f}%"
-
-if probability >= 80:
-    text += "\nRecommendation: This pig shows fast growth rate. We recommend keeping it for breeding."
-elif probability <= 50:
-    text += "\nRecommendation: This pig shows slow growth rate. We recommend culling."
-else:
-    text += "\nRecommendation: This pig has moderate growth rate. Consider as a backup breeding option."
     fig, ax = plt.subplots(figsize=(8, 1))
     ax.text(
         0.5, 0.5, text,
